@@ -8,78 +8,33 @@ import './css/style.css'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Router, Route, hashHistory, IndexRoute } from 'react-router'
-import { Layout, Menu, Icon } from 'antd'
-const { Header, Footer, Sider, Content } = Layout
 
-class App extends React.Component {
-	render() {
+import App from './js/App'
+import H5AndCss from './js/note/H5AndCss'
+import Address from './js/Address'
+import TaskList from './js/TaskList'
+import Calendar from './js/Calendar'
+import Emails from './js/Emails'
+import Manage from './js/Manage'
+
+class defaultPage extends React.Component {
+	render () {
 		return (
-			<Layout>
-				<Sider style={{ overflow: 'auto', height: '100vh', position: 'fixed', left: 0 }}>
-					<div className="logo" />
-					<Menu theme="dark" mode="inline" defaultSelectedKeys={['4']}>
-						<Menu.Item key="1">
-							<Icon type="user" />
-							<span className="nav-text">nav 1</span>
-						</Menu.Item>
-						<Menu.Item key="2">
-							<Icon type="video-camera" />
-							<span className="nav-text">nav 2</span>
-						</Menu.Item>
-						<Menu.Item key="3">
-							<Icon type="upload" />
-							<span className="nav-text">nav 3</span>
-						</Menu.Item>
-						<Menu.Item key="4">
-							<Icon type="bar-chart" />
-							<span className="nav-text">nav 4</span>
-						</Menu.Item>
-						<Menu.Item key="5">
-							<Icon type="cloud-o" />
-							<span className="nav-text">nav 5</span>
-						</Menu.Item>
-						<Menu.Item key="6">
-							<Icon type="appstore-o" />
-							<span className="nav-text">nav 6</span>
-						</Menu.Item>
-						<Menu.Item key="7">
-							<Icon type="team" />
-							<span className="nav-text">nav 7</span>
-						</Menu.Item>
-						<Menu.Item key="8">
-							<Icon type="shop" />
-							<span className="nav-text">nav 8</span>
-						</Menu.Item>
-					</Menu>
-				</Sider>
-				<Layout style={{ marginLeft: 200 }}>
-					<Header style={{ background: '#fff', padding: 0 }} />
-					<Content style={{ margin: '24px 16px 0', overflow: 'initial' }}>
-						<div style={{ padding: 24, background: '#fff', textAlign: 'center' }}>
-							...
-							<br />
-							Really
-							<br />...<br />...<br />...<br />
-							long
-							<br />...<br />...<br />...<br />...<br />...<br />...
-							<br />...<br />...<br />...<br />...<br />...<br />...
-							<br />...<br />...<br />...<br />...<br />...<br />...
-							<br />...<br />...<br />...<br />...<br />...<br />...
-							<br />...<br />...<br />...<br />...<br />...<br />...
-							<br />...<br />...<br />...<br />...<br />...<br />...
-							<br />...<br />...<br />...<br />...<br />...<br />
-							content
-						</div>
-					</Content>
-					<Footer style={{ textAlign: 'center' }}>
-						Ant Design ©2016 Created by Ant UED
-					</Footer>
-				</Layout>
-			</Layout>
+			<div>什么都没有什么都没有什么都没有</div>
 		)
 	}
 }
 
 ReactDOM.render(
-	<App />
+	<Router history={hashHistory} >
+		<Route path="/" component={App}>
+			<IndexRoute component={defaultPage} />
+			<Route path="note/h5-and-css" component={H5AndCss} />
+			<Route path="address" component={Address} />
+			<Route path="taskList" component={TaskList} />
+			<Route path="calendar" component={Calendar} />
+			<Route path="emails" component={Emails} />
+			<Route path="manage" component={Manage} />
+		</Route>
+	</Router>
 , document.getElementById('app'))

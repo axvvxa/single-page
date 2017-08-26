@@ -1,2 +1,12 @@
 * { margin: 0; padding: 0; box-sizing: border-box;}
-.bank { background: url(../image/ABC.png); width:200px; height:100px;}
+html, body {font-family: Arial, Microsoft Yahei;}
+
+.topBar { height:55px;padding:0 .8em;line-height:55px;border-bottom:1px solid #ccc;
+display:flex;justify-content:space-between;font-size:16px;font-weight:bold;
+}
+.topBar .siteTitle {color:#333;}
+.topBar .signout {color:#d73435;}
+.container {width:100%;overflow: hidden;position:absolute;top:55px;left:0;right:0;bottom:0;}
+.container .leftMenu {overflow: hidden;position:absolute;left:0;top:0;bottom:0;background:#333;}
+.container .rightContent {padding: 10px 20px;
+  position: absolute;left:240px;right:0;bottom:0;top:0;}
